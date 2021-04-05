@@ -1,0 +1,6 @@
+*.o
+*.diff
+
+st
+dwm
+dmenu
