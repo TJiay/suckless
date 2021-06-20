@@ -3,7 +3,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -50,10 +50,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Android Emulator", NULL,       NULL,       0,            1,           -1 },
-	{ "Emulator", NULL,       NULL,       0,            1,           -1 },
-	{ "quemu-system-i386", NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "chromium", NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "geogebra", NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -63,9 +61,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "Tile",      tile },    /* first entry is default */
-	{ "Null",      NULL },    /* no layout function means floating behavior */
-	{ "Mono",      monocle },
+	{ "Til",      tile },    /* first entry is default */
+	{ "Nul",      NULL },    /* no layout function means floating behavior */
+	{ "Mon",      monocle },
 };
 
 /* key definitions */
@@ -91,8 +89,7 @@ static const char *mutevol[] = { "/home/tujiay/scripts/vol-toggle.sh",  NULL };
 
 static const char *wpcmd[]  = { "/home/tujiay/scripts/wp-change.sh", NULL };
 static const char *sktogglecmd[]  = { "/home/tujiay/scripts/sck-tog.sh", NULL };
-static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", "scratchpad", "-g", "80x24", NULL };
 
 static const char *suspendcmd[]  = { "/home/tujiay/scripts/suspend.sh", NULL };
 
